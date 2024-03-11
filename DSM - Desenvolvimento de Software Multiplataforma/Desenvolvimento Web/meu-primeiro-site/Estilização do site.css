@@ -1,0 +1,20 @@
+body{
+    background-color: bisque;~
+}
+a:hover{
+    color: yellowgreen;
+}
+a:visited{
+    color: red
+}
+
+p{
+    text-align: center;
+
+}
+ul{
+    text-align: center;
+}
+#T{
+    color: black
+}

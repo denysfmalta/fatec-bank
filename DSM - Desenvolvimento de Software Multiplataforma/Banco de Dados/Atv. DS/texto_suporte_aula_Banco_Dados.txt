@@ -1,0 +1,31 @@
+******** AULA 1 ********
+
+--Screen1
+---- Create Table Usuarios
+	CREATE TABLE USUARIO( MATRICULA_USUARIO INTEGER, NOME_USUARIO VARCHAR(40), DATA_CADASTRO DATETIME DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (MATRICULA_USUARIO));
+
+
+--Screen1 
+----Insert ao preencher os campos e clicar em salvar
+	INSERT INTO USUARIO (MATRICULA_USUARIO, NOME_USUARIO, DATA_CADASTRO) VALUES (
+	---- nos outros parâmetros 3 e 5 do Join temos, respectivamente:
+		,'
+		',datetime('now','localtime'));
+----Mensagem 
+	Registro salvo no Banco de Dados!
+
+--Screen3 
+----select para criação da lista na inicialização da Screen3
+----lembrar que tem uma virgula selecionada para separar as linhas da lista...
+	SELECT substr('00000000'||MATRICULA_USUARIO, -8, 8)||' - '||upper(NOME_USUARIO) AS NOME, ',' FROM USUARIO order by nome_usuario;
+
+----select para Setar a Label ao clicar no item da lista:
+	SELECT substr('00000000'||MATRICULA_USUARIO, -8, 8)||' - '||upper(NOME_USUARIO)||'-'|| strftime('%d/%m/%Y', DATA_CADASTRO)||'-'||strftime('%HH:%M', DATA_CADASTRO)  FROM USUARIO WHERE MATRICULA_USUARIO = 
+
+
+----texto para limpar sujeira ao clicar no item da lista:
+	substr('00000000'||MATRICULA_USUARIO, -8, 8)||' - '||upper(NOME_USUARIO)||'-'|| strftime('%d/%m/%Y', DATA_CADASTRO)||'-'||strftime('%HH:%M', DATA_CADASTRO) 
+
+
+-----Comando para escluir um usuário do Banco de Dados
+	DELETE FROM USUARIO WHERE MATRICULA_USUARIO = 9999
