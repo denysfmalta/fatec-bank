@@ -1,0 +1,92 @@
+ou inclusivo, ou exclusivo
+
+
+
+CONDICIONAIS /=/ IF/ELSE
+
+Se 1+1=2 então 2>1
+
+1+1=2 — 2>1
+
+Se 1+1=2 então 1>2
+ 	 V			F
+
+
+Se 1+1=11 então 1<11    V
+Se 1+1=11 então 2+2=22  V
+
+# BICONDICIONAL
+
+CONDICIONAIS (símbolos)
+
+p <-----> q
+
+(p -> q) & (q -> p)
+
+(V ---> V) & (V ---> V)
+
+V e V
+
+V
+
+----------------
+
+p <-> q 
+v <-> f
+(v - f) e (f - v)
+F e V
+F
+
+p <-> q
+f <-> v
+
+(f-> v) e (v -> f)
+
+V e F
+
+F
+
+*não tem analise
+falso e verdadeiro ~= sinais
+adição lógica
+
+
+---------------------------
+
+
+p <-> q
+F <-> F
+(F -> F) e (F -> F)
+
+V e V
+
+V
+
+p = conectivos, q = condicionais
+
+
+Classifique em verdadeiro ou falso cada uma das proposições abaixo:
+
+a) 2-1=1 -> 5+7 = 3.4 V  b) 2²=4 <-> (-2)² = 4 V
+
+c) 5+7.1=10 -> 3.3=9 V    d) mdc (3,6)=1 F  <-> 4 é nº primo (?) F
+
+e) 2|8 -> mmc(2,8)=2  (F?)  f) 6\<2 f <->  6-2>/0 V  -  V
+
+
+
+
+
+
+numero, sinal, operação
+
+diferente de lógica proposicional
+
+lógica aristotélica
+
+
+estudar mdc e mmc
+
+
+
+
