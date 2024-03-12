@@ -1,6 +1,11 @@
-7 6 5 4 3 2 1 0  ELEMENTO
+# Aula I
+| ELEMENTO | POSIÇÃO | VALOR | 
 
-8 7 6 5 4 3 2 1  POSIÇÃO
+|-———|:-————:|——:|
+
+- 7 6 5 4 3 2 1 0  ELEMENTO
+
+- 8 7 6 5 4 3 2 1  POSIÇÃO
 
 128 64 32 16 4 2 1 VALOR
 
