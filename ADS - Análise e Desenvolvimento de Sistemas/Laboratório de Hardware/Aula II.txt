@@ -23,7 +23,7 @@ APLICAR
                
             MOVIMENTAÇÃO
                 |
-            CONTROLE
+            CONTROLE -> acumulador, processador interno dentro do acumulador
            /        \   
       ARMAZENAMENTO  PROCESSAMENTO
 

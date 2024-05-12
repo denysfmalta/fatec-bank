@@ -1,27 +1,107 @@
-# Visao Sistemica
+MICROPROCESSADORES - MICROCONTROLADORES
+			System
+			On a
+			Chip
 
-livro  Berdalanf, Teoria Geral dos Sistemas
+ULCI - Ultra alta escala de integração -> milhares de transistores em um circuito integrado
+
+Componentes
+(estrutura)
+
+       MEM. - DADOS, PROGRAMAS, VOLÁTIL (DESLIGA ENERGIA, PERDE OS DADOS)
+	|   	
+ENT. -> UCP -> SAÍDA 
+	|
+       MEM.
+       SEC.
+      MEC//SSD
 
 
-## conceitos
+FUNÇÕES: MOVIMENTAÇÃO, ARMAZENAMENTO, PROCESSAMENTO
+
+IMPLEMENTAÇÃO DAS FUNÇÕES DE VON NEUMANN EM INSTRUÇÕES DE BAIXO NÍVEL
+INSTRUÇÕES NUMÉRICAS DE FORMA QUE O CONTROLADOR ENTENDA
+PROGRAMAÇÃO DE BAIXO NÍVEL
+
+Raspberry PI -> IoT
+ChromeBook
+
+instruções de programa nas posições de memória da RAM
+CPU PROGRAM COUNTER aponta para a próxima instrução
+
+mnemônicos são interpretados e transformados em códigos numéricos
+
+input -> canal de entrada
+output -> canal de saída
+
+arquitetura de 64 bits permite a soma complexa em assembly
+little man computer só soma através do acumulador
 
 
 
-SKRATCH
 
-curso na prime (?)
-long life learning
- 
-                         
- CPU---------------------------------ARDUINO  
- 
-microprocessadores // microcontroladores
+A	S	S	E	M	B	L	Y
 
-2041  
-kai-funi
+		GRUPO	  MNEMÔNICO 	OPCODE
+		MATEM.	  ADD		1xx
+			  SUB		2xx
+		________________________________
+		MEM.	  STA	        3xx
+			  LDA		5xx
+		________________________________
+		CONT.	  BRA		6xx 
+		FLUX.	  BRZ           7xx
+			  BRP		8xx
+		________________________________
+		I/O	  INP	        901
+			  OUT		902
+		________________________________
+		GERA	  HLT           000
+			  DAT            -
 
-huawei
-cisco
-ITE
-LMC
-CCNA - redes
+
+INSTRUÇÕES PRIMEIRO DIGITO ENDEREÇO DOIS ULTIMOS DIGITOS
+FETCH
+AS INSTRUÇÕES SÃO QUEBRADAS NO REGISTRO DA INSTRUÇÃO E 
+O PARÂMETRO (ENDEREÇO DE MEMÓRIA)
+A INSTRUÇÃO de INP é 9 e o endereço em que ela é feita é 
+01 (??)
+
+
+
+FUNÇÃO DE ENTRADA E SAÍDA
+
+INP     00 INP
+OUT     01 OUT
+HLT     02 HLT
+
+
+FUNÇÃO DE ARMAZENAMENTO
+
+INP	00 INP 
+STA 44	01 STA 3 44
+OUT	02 OUT
+HLT	03 HLT
+
+FUNÇÃO DE SOMA
+
+INP	00 INP 
+STA 44	01 STA 44
+INP	02 INP
+ADD 44  03 ADD 44
+OUT	04 OUT
+HLT	05 HLT
+
+FUNÇÃO DE SOMA DE TRÊS NÚMEROS USANDO LABEL
+
+        INP
+        STA PRIM
+        INP
+STA SEG
+INP
+        ADD SEG
+ADD PRIM
+        OUT
+        HLT
+PRIM DAT
+SEG DAT
