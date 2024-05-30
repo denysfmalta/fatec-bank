@@ -1,0 +1,121 @@
+// Listando os bancos de dados já existentes
+show dbs;
+
+// Criando um novo banco de dados ou ativando um já existente
+use tw16;
+
+// Inserindo um documento que representa uma pessoa na coleção "pessoas"
+db.pessoas.insertOne({
+	nome: "Asdrúbal",
+	sobrenome: "Albuquerque",
+	idade: 54,
+	sexo: "M",
+	casado: true
+});
+
+// Inserindo uma segunda pessoa
+db.pessoas.insertOne({
+	sobrenome: "Junqueira",
+	"data de nascimento": "1989-05-20",
+	nome: "Jupira"
+});
+
+// Inserindo uma terceira pessoa
+db.pessoas.insertOne({
+	nome: "Delcides",
+	sobrenome: "Durães",
+	cargo: "Gerente de vendas",
+	empresa: "Nós Fazemos Assim S/A",
+	sexo: "M"
+});
+
+// Listando todas as pessoas cadastradas
+db.pessoas.find();
+
+// Filtrando as pessoas do sexo masculino
+db.pessoas.find{( sexo: "M" )};
+
+
+// Filtrando as pessoas do sexo masculino
+db.pessoas.find{( sexo: "F" )};
+
+// Atualizando uma pessoa para adicionar um campo que ficou faltando
+db.pessoas.updateOne({nome: "Jupira" }, { $set: { sexo: "F")}});
+
+// Filtrando as pessoas casadas
+db.pessoas.find({ casado: true });
+
+// Filtrando as pessoas que NÃO TÊM o campo casado
+db.pessoas.find({casado: {$exists: false}});
+
+// Colocando um carro na coleção de pessoas
+db.pessoas.insertOne({
+	marca: "Volkswagen",
+	modelo: "Fusca",
+	ano: 1969,
+	cor: "preto",
+	placa: "XYZ-9I76"
+})
+
+// Inserindo um carro na coleção de carros
+db.carros.insertOne({
+	marca: "Volkswagen",
+	modelo: "Fusca",
+	ano: 1969,
+	cor: "preto",
+	placa: "XYZ-9I76"
+})
+
+// Atribuindo um salário para uma pessoa
+db.pessoas.updateOne({nome:"Delcides"}, {$set: {salario: 3500}});
+
+// Atribuindo dois novos campos a uma pessoa
+db.pessoas.updateOne({nome:"Delcides"}, {$set: {cargo: "Autônoma", salario: 3500}});
+
+// Buscando pessoas cujo salário não seja igual a 3500
+//  $ne = not equal
+db.pessos.find({salario: {$ne: 3500}});
+
+// Buscando as pessoas com salário menor que 4000
+// $lt = lesser than (menor que)
+db.pessoas.find({salario: {$lt: 4000}});
+
+// Aumentando o salário do Delcides
+// $inc = incremento
+db.pessoas.updateOne({ nome: "Delcides", {$inc: {salario:800}}});
+
+// Aumentando o salário de todos os assalariados em 8%
+db.pessoas.updateMany({salario: {$exists: true}}, {$mul: {salario}})
+
+// Inserindo um documento com outro documento dentro (subdocumento)
+db.pessoas.insertOne({
+    nome:"Laurinda",
+    sobrenome: "Lopes",
+    "data de nascimento": "1990-09-17",
+    cargo: "Pessoa desenvolvedora sênior",
+    salario: 13000,
+    sexo: "F",
+    conjuge: {
+	nome: "Felisberto",
+	sobrenome: "Figueiredo",
+	cargo: "Auxiliar de manutenção",
+	salario: 2000,
+	sexo: "M"
+	}
+});
+
+// Pesquisando um campo de um subdocumento
+
+db.pessoas.find({"conjuge.nome": "Felisberto"});
+
+// Pesquisando pelo nome de uma pessoa no documento principal ou no subdocumento relativo ao cônjuge
+
+db.pessoas.find({$or: [{"sobrenome: "Figueiredo", "conjuge.nome": "Figueiredo"}]);
+
+// Excluindo o Fusca da coleção de pessoas
+
+db.pessoas.deletOne({modelo: "Fusca"});
+
+// Excluindo vários documentos com um único comando
+db.pessoas.deleteMany({sexo: "M"});
+db.pessoas.deleteOne({modelo: "Fusca"});
